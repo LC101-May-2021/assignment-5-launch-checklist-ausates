@@ -40,6 +40,19 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   if (validateInput(cargoLevel) === "Empty" || validateInput(cargoLevel) === "Not a Number"){
     alert("CargoLevel must be a number")
   }
+  let listPilot = document.getElementById("pilotStatus");
+  let listCopilot = document.getElementById("copilotStatus");
+  let fuelStatus = document.getElementById("fuelStatus");
+  let launchStatus = document.getElementById("launchStatus");
+  listPilot.innerText = `Pilot ${pilot} is ready to launch.`;
+  listCopilot.innerText = `Copilot ${copilot} is ready to launch.`;
+  list.style.visibility = 'visible';
+  if (fuelLevel < 10000){
+    fuelStatus.innerText = "Fuel Level too low for launch";
+    launchStatus.innerText = "Shuttle Not Ready for Launch";
+    launchStatus.style.color = "red";
+  }
+
 }
 
 async function myFetch() {
