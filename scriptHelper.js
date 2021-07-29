@@ -27,6 +27,10 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+  let listPilot = document.getElementById("pilotStatus");
+  let listCopilot = document.getElementById("copilotStatus");
+  let fuelStatus = document.getElementById("fuelStatus");
+  let launchStatus = document.getElementById("launchStatus");
   
    if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number"){
      alert("Pilot must be a word or letters")
@@ -40,10 +44,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   if (validateInput(cargoLevel) === "Empty" || validateInput(cargoLevel) === "Not a Number"){
     alert("CargoLevel must be a number")
   }
-  let listPilot = document.getElementById("pilotStatus");
-  let listCopilot = document.getElementById("copilotStatus");
-  let fuelStatus = document.getElementById("fuelStatus");
-  let launchStatus = document.getElementById("launchStatus");
+  
   listPilot.innerText = `Pilot ${pilot} is ready to launch.`;
   listCopilot.innerText = `Copilot ${copilot} is ready to launch.`;
   list.style.visibility = 'visible';

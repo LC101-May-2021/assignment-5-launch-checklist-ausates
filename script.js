@@ -23,9 +23,10 @@ window.addEventListener("load", function() {
           
           if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === ""){
             alert("All Fields Are Required");
-            event.preventDefault();
+            
           }
           formSubmission(doc, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
+          event.preventDefault();
           
      });
    })
