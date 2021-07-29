@@ -77,7 +77,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   listPilot.innerText = `Pilot ${pilot} is ready to launch`;
   listCopilot.innerText = `Co-pilot ${copilot} is ready to launch`;
 
-  if (fuelLevel > 10000 && cargoLevel < 10000){
+  if (fuelLevel >= 10000 && cargoLevel <= 10000){
     launchStatus.innerText = "Shuttle is ready for launch";
     launchStatus.style.color = "rgb(65, 159, 106)";
     list.style.visibility = 'hidden';
